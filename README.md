@@ -130,3 +130,61 @@ Bytes
 - Bytes can be converted from hexadecimal values to bytes, and can be used to find, detect, use, and modify data.
 
 -----------------------------------------------------------------
+
+# Basic Data Structure
+
+Lists
+- Python's slicing syntax allows for the extraction of values from lists or strings, with options to add a third value, generate longer lists, and step backward using negative values.
+- These operations allow for one-value data extraction.
+- This section teaches Python how to modify lists using the append() method, insert() method, remove() method, and pop() method.
+- Appends an item to the end of a list, inserts an item at a specific position, and removes items based on their value.
+- Pop() removes and returns the last item at the end of the list. A loop with pop() can remove all items from the list.
+- Variables store a reference to the list, not a copy, and changes to one variable will be reflected in other variables.
+- Copy() method creates a copy of a list, preventing changes from affecting the other. Lists are a powerful data structure in Python, and it's essential to understand their functionality.
+
+Tuples and Sets
+- One common use of sets in programming is to remove duplicates from a list, since sets only contain unique values.
+- To demonstrate, let's create a list with some duplicate values and de-duplicate it by converting it to a set and back again: myList = ['b', 'c', 'c'] mySet = list(set(myList)).
+- Sets can be checked using the membership operator (in), find the length of a set using the length() function, and remove an element from it using the pop() function.
+- Tuples, similar to lists but declared with parentheses, are ordered and subscriptable but immutable.
+- Despite this, tuples are more efficient due to their less memory usage, making them suitable for large data storage.
+- Tuples are useful for returning multiple values from a function in Python.
+- They can be separated with commas and unpacked into individual variables using the syntax A, B, C = myTuple.
+- Although not as flexible as lists, they offer convenience and elegance.
+
+Dictionaries
+- A trailing comma at the end of the last key-value pair is a good practice.
+- To access a key-value pair, type the dictionary name followed by the key in square brackets.
+- Add a new pair, update an existing pair, and access keys and values using the.keys() and.values() methods.
+- A dictionary is a structured structure where values are listed, adding is easy if key exists.
+- If key is unknown, if-else statements can be used. Len() function can be used for dictionary length.
+- The default dictionary is a solution to simplify code in Python.
+- It imports from the collections package and requires specifying the object type to return by default.
+- It automatically creates a new default value if a key doesn't exist, simplifying code.
+- Unlike regular dictionaries, default dicts offer better data structures than lists and dictionaries.
+
+List Comprehensions
+- Python's list comprehension feature distinguishes it from other programming languages by providing a comprehensive listing of numbers, demonstrating its uniqueness.
+- A list comprehension is a syntax similar to a for loop, allowing for multiple items in a list.
+- It's enclosed in square brackets and can use any variable name, allowing for a for loop in one line and filtering or applying functions to every item.
+- List comprehension is a useful tool for working with numbers and strings.
+- For example, to create a filtered list of numbers from 0 to 99, we can use the modulus operator to select only those divisible by 10.
+- To convert the filtered list into a print statement, we can modify the code to include numbers ending in 0, 1, or 2.
+- The "split" function splits a string based on a character or string, splitting it into two sentences or individual words.
+- To make the text lowercase, a new function called "cleanWord" uses replace and lower functions to remove periods and convert the string to lowercase.
+- This helps keep code concise but not too long or difficult to read.
+- Applying the "cleanWord" function to a list comprehension results in a clean list of all words.
+- List comprehensions are powerful tools for cleaning text and handling large amounts of data.
+- cleanWord = [word for word in sentence.split() for sentence in myString.split('.') ]
+- One example is the nested list comprehension, which can group words by the sentence they appeared in.
+- This is achieved by breaking the original text into sentences and applying a nested list comprehension to each sentence.
+- This results in a two-dimensional structure, grouping clean words by the sentence they appeared in.
+- List comprehensions are essential in Python to make code more readable and Pythonic, making users a list comprehension expert.
+
+Dictionaries and Comprehensions
+- In Python, dictionary comprehensions can be used to create a new dictionary from an iterable structure, similar to list comprehensions.
+- For example, to create a dictionary from a list of tuples, use the syntax "animals = {item[0]: item[1] for item in animalList}".
+- To simplify dictionary comprehension in Python, use tuple unpacking instead of "item[0]: item[1]".
+- This avoids indexing each tuple element separately and allows for unpacking as many variables as there are elements in each tuple.
+- To convert a dictionary back into a list, use the "items" method to return a list of key-value pairs.
+- To change the structure of a list, use a list comprehension with the syntax "name_value = [{'name': key, 'value': value} for key, value in animals.items()]" to create a list of dictionary objects with original keys and values.
