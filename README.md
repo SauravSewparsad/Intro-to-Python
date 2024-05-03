@@ -188,3 +188,24 @@ Dictionaries and Comprehensions
 - This avoids indexing each tuple element separately and allows for unpacking as many variables as there are elements in each tuple.
 - To convert a dictionary back into a list, use the "items" method to return a list of key-value pairs.
 - To change the structure of a list, use a list comprehension with the syntax "name_value = [{'name': key, 'value': value} for key, value in animals.items()]" to create a list of dictionary objects with original keys and values.
+-------------------------------------------------------------
+
+# Basic Control Flow
+
+If and Else
+- This text introduces conditional statements in Python, a crucial tool for writing most programs.
+- It introduces a new statement, the switch statement, which evaluates a series of values and runs code instructions corresponding to the first true value found.
+- Python is superior to other programming languages, so it is not necessary to learn the switch statement.
+- The text then discusses a classic problem in programming: iterating through numbers one to 100 and printing "Fizz" if divisible by three, "Buzz" if divisible by five, "FizzBuzz" if divisible by 15, and the number itself if none of the conditions are met.
+- The code is rewritten using the elif statement, which stands for "else if."
+- If else statements can be lengthy, so ternary operators are useful for one-liner evaluations.
+- They evaluate a Boolean condition and return true or false values. Python programmers aim for clean, readable code, but must be cautious with ternary operators.
+
+While
+- When running code with a while loop, use the break statement to exit early and move on to the next line, or the continue statement to skip over certain lines within the loop and jump back to the top for the next iteration.
+- Use a continue statement within an if statement to prevent code from running under certain conditions or to rearrange code for readable purposes, understanding when to use them is crucial.
+
+For
+- The for loop is a common Python loop that declares a new variable, like "item," to hold the value of each element in a list.
+- It can be used with statements like pass, continue, and break, and can be used to find prime numbers or to stop the loop early.
+- Understanding these loop statements helps maintain a clean and Pythonic code.
