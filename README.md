@@ -209,3 +209,62 @@ For
 - The for loop is a common Python loop that declares a new variable, like "item," to hold the value of each element in a list.
 - It can be used with statements like pass, continue, and break, and can be used to find prime numbers or to stop the loop early.
 - Understanding these loop statements helps maintain a clean and Pythonic code.
+-------------------------------------------------------------
+
+# WEEK 2 PYTHON
+
+# Basic functions
+
+anatomy of a function
+- Functions are named and parameterized using def statements. A simple function, performOperation, takes two numbers and an operation (sum or multiply) as input and returns the result, if sum is used.
+- To simplify the process of specifying the operation parameter as "sum" repeatedly, we can assign a default value using name parameters or keyword arguments.
+-  Named parameters
+    + Remove the "operation equals multiply" part to get five, or assign your own value using "multiply" as the third parameter.
+    + Add a "message" keyword argument to a function, specifying a default message to be printed when called, and pass the message before or after the operation.
+- args
+   + In Python, keyword arguments must precede positional arguments, with the order of the first two being crucial. However, keyword arguments can be arranged in any order.
+   + Optional arguments in Python have a functional limitation of allowing multiple variables.
+   + To allow users to pass in any number of variables, use the asterisk symbol before the argument name.
+   + This works only for positional arguments, not keyword arguments, preventing "unexpected keyword argument" errors.
+- kwargs
+   + Kwags is a method for handling keyword arguments, which are stored as a dictionary instead of a tuple, as they have keys, values, and can be passed in any order.
+   + To make the performOperation function more flexible, import the math library and rewrite it to use args as the default argument.
+   + The function can perform desired operations by passing in the appropriate arguments, such as adding numbers to get the desired result.
+
+# Variables and Scope
+- function scope
+   + The "locals" function in Python allows access to all variables within a function without asterisks, using the method *args and **kwargs to print out arguments.
+
+- locals()
+   + Modify the function definition to execute num1, num2, and multiplication, defaulting to addition.
+   + Use the locals function in Python to print the output, which contains a dictionary of variables.
+   + Locals variables are accessible only within the function, avoiding errors when referencing outside its scope.
+   + In Python, there are two types of variables: local variables, which are defined inside the function, and global variables, which are defined outside the function in the main code block. Thankfully, Python comes with a handy built-in function called globals that enables us to retrieve all of these variables.
+
+- globals()
+   + Python's pre-built variables are useful for working with classes and packages, while Jupyter Notebooks use variables to manage data.
+   + The scope of variables in a line of code determines which can be accessed, classified as global or local variable scope.
+
+- Global and Local Scope
+   + Two functions, one with variables A and B and the other with variables C and B, will be created, each with its own local variable scope and global scope access.
+   + The global scope allows variables like varA to be printed in both functions, but if they're defined in function one's local scope, an error occurs.
+   + Redefining a message in function one's local scope allows both local and global values to be printed.
+   + Similarly, declaring a function within another function only allows it to be called within it, causing a syntax error.
+
+# Functions As Variables
+Variables as Functions
+- Variables and functions both have names and data associated with them. However, for functions, this data includes information about required parameters and the lines of instruction to be executed. In Python, a function is represented as an object.
+
+Viewing Function Data With  __code__
+- The "code" attribute of Python function objects can be used to confirm that functions are just variables in Python. Print the variable names and the byte object of all the lines of instruction in a function using this attribute. However, this is not something you would typically need to use. 
+
+Text Processing in Python
+- The text outlines two text processing operations and a function that can lowercase, remove punctuation, new lines, and words with three or less characters.
+- These operations can be arranged in a list, allowing for flexibility in the order and selection of text processing functions, making it a useful tool for business processes.
+
+Lambda Functions
+- Lambda functions are a way to define small functions without assigning a variable name, like 5 or 2 + 3.
+- They can be used to pass a function as an argument to another Python function, like a sorted function.
+- Lambda functions are concise and convenient for writing small functions needed in code.
+- They are useful when passing a function as an argument to another Python function, such as a sorted function.
+
