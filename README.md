@@ -267,4 +267,46 @@ Lambda Functions
 - They can be used to pass a function as an argument to another Python function, like a sorted function.
 - Lambda functions are concise and convenient for writing small functions needed in code.
 - They are useful when passing a function as an argument to another Python function, such as a sorted function.
+---------------------------------------------------------------
 
+# Classes and Objects Fundamentals 
+
+Anatomy of class
+- Instance Attributes
+   + The concept of classes can be confusing, but an example is the dog class.
+   + It has two attribute attributes, name and legs.
+   + However, the value of the legs attribute is hardcoded and cannot be directly accessed.
+   + This raises questions about whether having four legs is an inherent property of being a dog or if three-legged dogs can be created as well.
+
+- Static Attributes
+   + Change the handling of the legs attribute in the class to define it as a static variable outside of the constructor, ensuring each instance has the same value.
+   + These static variables are commonly used for holding constants or business logic.
+   + To prevent modification, programmers add an underscore before the variable name and use a getter method to retrieve the value, either without passing in the self attribute or with self included.
+
+Instance and Static Methods
+- One of your favorite things to do in Python may be string parsing. To demonstrate, create a class called Word Set that contains a set of words. 
+1. Start with an empty set and add to it by passing in big blocks of text, punctuation and all. 
+2. Add text using the method add text, which first calls the method clean text to remove the punctuation and make everything lowercase. 
+3. Then use the split function to turn the sentence into a list of words, which can be added to the set. 
+4. Finally, print the set of words.
+- The clean text method is a static method, unlike add text, which is an instance method.
+- Static variables like replace puncs can be added, but cannot be referred to with instance methods.
+
+Inheritance
+- Class Inheritance
+  + In Python programming, one class can inherit all methods and attributes of another, known as the parent class.
+  + This inheritance occurs automatically when the child class is created.
+  + For example, a dog class can be inherited into a chihuahua class, which can be created using the parent dog class's methods and attributes.
+  + This allows for the creation of a new instance.
+
+- Extending Built-in Classes
+   + Python's built-in classes can be extended to create unique lists.
+   + By instantiating a list as "list", we can override the append function and check if an item is already in the list.
+   + However, self.append is not recommended as it can cause infinite recursion or an endless loop.
+   + Instead, we use the "super" function to call the original append function in the parent class.
+   + To test the new class, create a new instance of the unique list and append items to it.
+   + The "super" function is also used in the constructor to add a new attribute to a child class instance.
+   + However, this overwrites the parent class's constructor, which may have essential initialization requirements.
+   + To avoid this, use "super" again and ensure the parent constructor is called first before adding the new property.
+   + Class extensions are an elegant and powerful tool for resolving coding issues.
+-------------------------------------------------------------------------
