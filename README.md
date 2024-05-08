@@ -310,3 +310,65 @@ Inheritance
    + To avoid this, use "super" again and ensure the parent constructor is called first before adding the new property.
    + Class extensions are an elegant and powerful tool for resolving coding issues.
 -------------------------------------------------------------------------
+
+# Error Handling Fundamentals
+
+Handling Errors and Exceptions
+- Python's syntax varies between errors and exceptions, with exceptions determined during runtime and retryable, and errors cannot be retried.
+- However, they all function similarly, with the base exception class providing useful properties like halting code execution and providing information about why and how it was halted.
+- For example, the division by zero error is an example of an exception that extends the base exception class.
+- The stack trace, which shows the original location of the function call and where the error was triggered, is a crucial tool for debugging Python programs.
+- Expanding the stack trace further by creating a function called "callCauseError" can further expand the trace, making it even longer.
+- In large programs with multiple files, stack traces can become extensive, making it essential to interpret them effectively.
+- Exceptions, seemingly daunting due to small code mistakes, are actually classes. They can be caught using a try/except statement, allowing us to obtain an instance of the raised exception.
+- Try/Except
+   + To handle exceptions, add 1/0 and use the except exception as e.
+   + This will catch the exception and prevent it from being raised.
+   + Exceptions are not to worry about but require careful consideration.
+   + Handling them correctly is like a secondary layer of code, ensuring error-free or beautiful errors.
+
+Managing and Handling Exceptions
+- Exceptions are not to be feared, but they need to be managed.
+- The Try / Except statement can be used to catch and return an exception without a stack trace.
+- This pattern can be used to print something without requiring the ase instance, indicating an error.
+
+  + Finally
+    - The finally statement is a useful tool in programming, as it ensures that a function always executes and prints out, regardless of what happens inside the Try/Excuse block.
+    - This is often used to time the execution time of a function.
+    - To use this, import the time class and create a timer using the start time and seconds.
+    - In the finally statement, use the time.time variable to display the current time and seconds. Time.sleep can pause execution for a specified number of seconds, allowing for fast execution.
+    - This try-finally pattern maintains code cleanliness and compactness, allowing for cleanup or logging after a statement completes.
+   + Catching Exceptions by Type
+      - The text explains how to catch exceptions in Python, focusing on zero division and type errors.
+      - It suggests adding another except statement and chaining them together.
+      - The order of these except statements matters, with Python trying the first one.
+      - The general exception should be placed down, followed by more specific ones.
+      - This is useful for handling complex exceptions, such as HTTP request-response handling, where multiple except statements are in a row.
+      - To simplify this process, it is suggested to copy and paste these blocks into multiple functions, allowing for easier handling and catching in a single function.
+   + Custom Decorators
+      - Custom decorators can be used to handle exceptions in Java.
+      - Create a new function called handleException, passing a function as an argument and defining an inner function called wrapper.
+      - Execute the function and paste exceptions into the wrapper function.
+      - Create a handleException decorator and place it on a causeError function, returning one over zero.
+      - This handle exception can be reused for another function.
+   + Raising Exceptions
+      - Raising exceptions in Java is a powerful technique that can be achieved by using the handle exception decorator.
+      - A function called raiseError raise Exception can be created, which raises or throws a new exception when it is reached.
+      - This can be used to except input except the number zero, add an argument, and print n if it equals zero.
+      - However, when using the handleException function on a function that takes arguments, there are no arguments when called, causing an error when rerun.
+      - Combining handle exceptions with custom exceptions can make it easier to raise exceptions in Java.
+
+Working With Custom Exceptions
+- Custom exceptions is an easy one. In fact, you already know how to do this, class CustomException extends Exception:pass. Now you have written a custom exception.
+- The pass statement is used to create a new CustomException class without defining anything.
+- The name of the class contains key information that helps debug apps or inform users about errors.
+- A function can be written to raise a new CustomException, def causeError:raise CustomException, and then call the function.
+- The custom message is then passed into the new class, which is then printed out. Custom exceptions are lightweight classes with minimal special attributes, but may have useful attributes for organizing and presenting error information.
+- For instance, a web server may have an HttpException class and specific HttpException classes that extend it.
+
+  + Adding Attributes
+    - This text outlines the creation of an HTTP exception with a static status code and message attribute, and how to format the string passed to the parent exception.
+    - The HttpException class is defined as an extension of the Exception, with a status code of None and a message of None.
+    - The constructor is overridden by the child class, which is defined as a 404 status code and a message of Resource not found.
+    - A ServerError class is created, with a status code of 500 and a message of "This server messed up!".
+    - The function raiseServerError is then called, and the exception message is formatted with the status code and message.
