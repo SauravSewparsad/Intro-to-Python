@@ -372,3 +372,39 @@ Working With Custom Exceptions
     - The constructor is overridden by the child class, which is defined as a 404 status code and a message of Resource not found.
     - A ServerError class is created, with a status code of 500 and a message of "This server messed up!".
     - The function raiseServerError is then called, and the exception message is formatted with the status code and message.
+---------------------------------------------------------------
+
+# Threads and Processes Fundamentals
+
+Fundamentals of Threads and Processes
+- Computers operate on memory and file storage, which are segmented and controlled by the operating system.
+- Long-term memory is used when a file is saved and loaded, while short-term memory is used when declaring variables in a program.
+- The operating system allocates memory to each process, preventing them from accessing each other's memory.
+- A process can have multiple threads and execute code in parallel, allowing for more efficient computations.
+- This chapter will focus on computing in parallel, inside different threads and processes.
+
+Multithreading
+- In programming, threads and processes are often used to handle large-scale tasks like fetching data from a remote server.
+- To create a function that calculates the square of a number, import the threading and time modules.
+- Create a function called longSquare, which takes a long time to complete.
+- For example, to calculate the square of a few numbers, create two threads: t1 and t2. Pass in two keyword arguments: target and args.
+- Start both threads with the start function and join them with the join function.
+- This runs in about half the time it would take to run them one at a time.
+- However, the return value of the function is not available in the threads.
+- To get the output, create a results dictionary and modify the function to pass in the results dictionary.
+- Pass in the results, add them to the dictionary, print them, and then print the results.
+- To keep things organized, create a list called threads, plural, and call the function t.start for t in threads.
+- Finally, print the results. This is faster than waiting one at a time and allows for more complex tasks.
+
+Multiprocessing
+- Multi-processing and Python can be used to create two separate Python processes running independently on a machine.
+- To start, stop, and manage these processes, a module called multiprocessing can be used.
+- The module can be installed with pip install multiprocess, which has all the same functions and is used exactly as multiprocess but does not have the bug with pickiness about where the function is defined.
+- To use multiprocess and the time module, replace the thread class with the process class and call it p1 and p2.
+- This should work as expected, but there are no results.
+- Processes do not share memory, and they get a copy of the dictionary in their own separate memory space.
+- To print the computed value from within the function itself, print one and a four instead of returning or saving it in the results.
+- If you add 10 processes to the mix, use the same pattern as before with the threads.
+- Processes are equal to a list, and new lines are not where they were expected.
+- In summary, multi-processing and Python can be used to create two separate Python processes running independently on a machine.
+- The multiprocess module can be used to manage these processes, but it may not be as efficient as the threading module.
