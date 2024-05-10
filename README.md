@@ -408,3 +408,62 @@ Multiprocessing
 - Processes are equal to a list, and new lines are not where they were expected.
 - In summary, multi-processing and Python can be used to create two separate Python processes running independently on a machine.
 - The multiprocess module can be used to manage these processes, but it may not be as efficient as the threading module.
+------------------------------------------------------------4
+
+# Fundamentals of Working with Files 
+
+Opening, Reading and Writing
+- Reading files
+   + Python programmers often need to produce tangible files for management purposes, such as attaching to emails or opening in Excel.
+   + Working with files in Python is not as simple as double-clicking an icon on a desktop, as it involves working directly with the operating system.
+   + It is important to manage whether the program is reading the file's contents or intending to make changes.
+   + This is because two applications can make changes to the same file simultaneously, causing problems.
+   + To do this, use the open function with the file name and the string R as arguments.
+
+- Writing Files
+   + To access the text inside a file, use the readline function, which reads the file one line at a time.
+   + This file object contains a bookmark of read lines. Another option is readlines, plural, which retrieves all unread lines from the file and converts them into a list of strings.
+   + To print the file contents, use the for line in f.readlines, print line. Note that the lines are double-spaced due to new line characters and the print statement.
+   + To fix this, use the strip function on each line to remove leading or trailing white space, including new lines. This method is more visually appealing than ugly.
+- Appending Files
+   + In Python, writing files is an efficient operation that uses a W for write instead of an R.
+   + The output.txt file is created when the write function is run. However, when opening the output file, it doesn't exist.
+   + Python tries to make file writing more efficient by putting all data in a buffer and only writing to the file when the buffer gets full or when the file is closed.
+   + To close the file, use f.close and then run the write function. When reopening the file, it doesn't print a new line character between the lines, so adding a new line character is necessary.
+
+CVS
+- Reading
+   + The text describes a CSV file called 10_02_us.csv, derived from a dataset from geonames.org.
+   + The file contains zip codes in the US, city or town information, and latitude and longitude of its location.
+   + To read the file, we open it in read mode and pass it to a new csv.reader.
+   + This reader is an iterable CSV reader class, but it does not parse the file correctly due to tab-separated values. To fix this, we pass a spac slash T as a delimiter argument, backslash T.
+   + This will split the values and parse comma-separated values correctly.
+   + The first row printed is the header, and the CSV reader has a function called next to skip over the header.
+   + The reader has an internal bookmark that keeps track of where you are.
+   + If you want to use header data, you can use the dict reader, csv.DictReader, which uses the same delimiter.
+   + This header is used as the keys in each dictionary in the list, making it a useful data format in Python.
+- Filtering Data
+   + Convert data from reader object to list object, storing prime numbers between 2 and 99,999.
+   + Filter prime locations by filtering rows by int data postal code in primes.
+   + Limit search to Massachusetts and row state code to MA. Print out the length of data, as prime locations can start with 0.
+   + The search should be limited to Massachusetts and row state code equals MA.
+
+JSON
+- Loading JSON
+   + In this text, we discuss the concept of JSON files and their format, specifically JSON strings.
+   + It is important to note that JSON is not Python, but rather a string. To convert a string into a dictionary, we need to import the JSON module, import json, and use the json.loads method to pass in the string, jsonString.
+   + It is important to note that this method is called loads plural, not loads singular.
+   + Adding a trailing comma to a JSON string can cause a JSON decode error, which is common when working with JSON from untrustworthy sources.
+   + To avoid this, we need to import the JSON module and JSONDecodeError from json. This is the same as reading JSON, but with a different approach.
+
+- Dumping JSON
+   + Use the json.dumps method for formatting a valid Python dictionary as a JSON string.
+   + This method is dumps plural and typically doesn't require exception handling. However, there's one exception where an exception could be thrown.
+
+- Custom JSON Decoders
+   + Create an animal class and modify the dictionary to use it.
+   + Replace the apple with an aardvark, bear, or cat. The JSON module doesn't know how to handle this Animal class.
+   + To fix this, override the default JSON encoder with a new one.
+   + Import the JSONEncoder class and create a new AnimalEncoder class.
+   + Override the default method, def default self and o, which is the object to be decoded into JSON.
+   + This ensures the correct JSON representation of the Animal class.
