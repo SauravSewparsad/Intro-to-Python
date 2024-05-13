@@ -467,3 +467,54 @@ JSON
    + Import the JSONEncoder class and create a new AnimalEncoder class.
    + Override the default method, def default self and o, which is the object to be decoded into JSON.
    + This ensures the correct JSON representation of the Animal class.
+-------------------------------------------------------
+
+# Week 3
+# Project Planning
+
+Finding Inspiration
+- The initial challenge in programming is determining what the program should accomplish, similar to the writer's block faced by aspiring authors.
+- To overcome this, various sources of inspiration can be shared to fuel your next Python project.
+- Start with hobbies, such as attending concerts or organizing your photo collection.
+- Consider automating mundane tasks in your workplace by writing a Python script to transfer data or generate reports.
+- Reflect on your daily routine at home and consider tasks that could be streamlined through automation.
+- For example, develop an application that sends a daily email digest, compiling all necessary information in one convenient place.
+- This project serves as the guiding example throughout the course.
+- Add new ideas to your list as you go about your day, keeping them ready to be explored.
+- This will help you find exciting projects to explore and overcome your writer's block.
+
+User Stories
+- The planning process for a daily email digest generator in Python involves determining specific details through user stories.
+- These brief, informal stories should focus on the user's goal and motivation, rather than the application itself.
+- They should follow the format "As a [user/role], I want [goal] so that [reason/benefit]."
+- Additional user stories can be written to elaborate on specific aspects, such as reading inspirational quotes or weather forecasts.
+- It is crucial to avoid overloading the application with every possible feature, keeping the initial scope manageable.
+- Ideas for additional features can be kept separately in a backlog. Focusing on the user's goals and reasons is essential, rather than specific interface details or implementation methods.
+- Writing your own set of user stories is valuable for project development.
+
+Use Cases
+- User stories and use cases are planning tools for applications, with use cases containing a title, an actor, and a scenario describing how a goal is achieved.
+- They complement each other, with user stories focusing on the who, what, and why of a task or goal, and use cases covering the who, what, and how of achieving that goal.
+- The choice between using user stories alone or combining them depends on the complexity of the project and the user's personal working style.
+
+Project Requirements
+- Traditional requirements are essential for formally defining the capabilities and limitations of an application.
+- Functional requirements outline what the application should or should not do, such as generating inspirational quotes, retrieving weather forecasts, Twitter trends, and Wikipedia articles, and formatting them into an email.
+- These requirements are high-level, omitting specific details like forecast duration or temperature unit.
+- Non-functional requirements focus on maintainability, reliability, and usability, such as having a configurable GUI for admin interaction, extensible content types, and resilience to content errors.
+- These requirements help initiate the first iteration of the application, making it a good time for individuals to write their own set of functional and non-functional requirements.
+
+Architecture
+- Traditional requirements are essential for formally defining the capabilities and limitations of an application.
+- Functional requirements outline what the application should or should not do, such as generating inspirational quotes, retrieving weather forecasts, Twitter trends, and Wikipedia articles, and formatting them into an email.
+- These requirements are high-level, omitting specific details like forecast duration or temperature unit.
+- Non-functional requirements focus on maintainability, reliability, and usability, such as having a configurable GUI for admin interaction, extensible content types, and resilience to content errors.
+- These requirements help initiate the first iteration of the application, making it a good time for individuals to write their own set of functional and non-functional requirements.
+
+Stub Code
+- The program has been designed using three Python modules: dd_content.py, dd_email.py, and dd_gui.py.
+- The dd_email.py module contains the daily digest email class, with placeholder methods and a pass statement for execution.
+- The dd_content module includes independent functions for retrieving random quotes, weather forecasts, Twitter trends, and Wikipedia articles, allowing for future expansion with additional content sources.
+- The dd_gui module handles the graphical user interface for the email digest administrator, using the TKinter module.
+- Import statements for TKinter are included, and the if name equals main section is filled with standard code to build and run the GUI.
+- The stub code provides structure for implementation, allowing for separate development of the email class, independent content functions, and the GUI.
