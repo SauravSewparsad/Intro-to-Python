@@ -518,3 +518,40 @@ Stub Code
 - The dd_gui module handles the graphical user interface for the email digest administrator, using the TKinter module.
 - Import statements for TKinter are included, and the if name equals main section is filled with standard code to build and run the GUI.
 - The stub code provides structure for implementation, allowing for separate development of the email class, independent content functions, and the GUI.
+----------------------------------------------
+# Content Retrieval
+
+Daily Inspirational Quotes
+- The "dd_content.py" module will implement four functions, including the "get_random_quote" function.
+- The source of random quotes is determined, and a personal list of inspirational quotes is chosen for simplicity.
+- The CSV format is chosen for simplicity.
+- The "get_random_quote" function is implemented in the "dd_content.py" file, taking a named parameter for the quotes file location and creating a list of dictionaries using list comprehension.
+- A default quote is defined in case the file fails to load.
+- The random module's "choice" function is used to select a random quote from the list, which is returned as a dictionary object.
+- Testing code is added to demonstrate quote generation functionality, with the "get_random_quote" function called without an input argument and the returned quote printed.
+- The script will display the generated quotes, with the first quote retrieved from the "quotes.csv" file and the second quote being the default quote by Eric Idle.
+
+Weather Forecasting with OpenWeatherMap
+- The text outlines the implementation of the get_random_quote function and the subsequent content function, get_weather_forecast. The weather forecast data needs to be current, so it cannot be stored in a local CSV file. Instead, it must be sourced from the internet using Python web-scraping libraries or online sources like openweathermap.org. OpenWeatherMap offers various callable APIs for accessing current and forecast weather information, which require registration with the service and obtaining an API key.
+- The 5-Day / 3-Hour Forecast is the most suitable option, providing weather data in three-hour intervals. The API documentation provides examples of different ways to request the forecast based on the city's name, ID number, geographic coordinates, or even a ZIP code. The geographic coordinates option requires latitude and longitude values to specify the desired forecast location.
+- For the initial version of the application, the forecast should be used as the only recipient of the email digest. The default format for the returned data is JSON, but only select few relevant fields. The Python code that calls and utilizes the forecast API includes three new modules: the request module from the urllib package, the JSON module to parse the response, and the datetime module to format and store the timestamp for each forecast period.
+- The get_weather_forecast function retrieves weather forecasts based on coordinates, with a default location near Cape Canaveral, Florida, if no coordinates are provided. The script includes an OpenWeatherMap API key, formats a URL using the API key and coordinates, and uses the request module to retrieve the JSON response from the API.
+- A simplified forecast dictionary is created instead of returning the entire dictionary obtained from the load function, including desired information such as the city, country, and a list to store forecast data for future time periods. A for loop is used to iterate through the first nine three-hour forecast periods, gathering relevant information for the next 24 hours.
+- The get_weather_forecast function returns the newly constructed forecast dictionary if everything goes smoothly, but if an error occurs, the except block will execute, printing the exception and the function will return none. The function is tested using three cases: calling the function without arguments, providing coordinates for Austin, Texas, and defining invalid coordinates. The output shows the forecast for the default location (Cape Canaveral), followed by the forecast for Austin, Texas, and an error message when invalid coordinates are used, confirming the function's expected behavior.
+
+Trending Social Media Content (Twitter)
+- The development of the DD content module required access to current Twitter trends. To do so, developers needed to register a Twitter account, request API access, and obtain an API key. However, the authentication process was complex, so they searched for a Python library that could handle it. They found Twitter on pypi.org, but instead of searching through over 3,000 Python projects related to Twitter, they turned to Google for solutions.
+- Tweepy is a popular, regularly updated Python library with the required capabilities for this project. Its documentation reveals an API method called "trends_place," which retrieves current trends based on a location's unique identifier called WOEID (Where On Earth Identifier). To use Tweepy, install it on your computer, import the Tweepy module, and define a function called "get_twitter_trends" with an optional parameter for the WOEID value.
+- The function returns the current trends as a list of dictionaries, each containing information about a trend. For testing purposes, three test cases were created: the first case without arguments, which retrieved and printed trends for the default region, the second case passing a WOEID corresponding to London, and the last case passing an invalid WOEID, resulting in an exception and the function returning None.
+- When the DD content module was run in a terminal, the output displayed the top Twitter trends for the United States and London, but an error message appeared for the invalid WOEID case because the function couldn't retrieve trends for that location.
+
+Importing Articles
+- The fourth content retrieval function aims to fetch a random Wikipedia article.
+- The search for a Wikipedia API documentation led to finding the desired information.
+- The REST API allows access to their content. The get button is clicked, followed by the try it out button.
+- The desired return format is selected, with options for a random page title, full page HTML, or a summary of key points.
+- The execute button is clicked. The request URL field displays the URL for obtaining a random summary, and the response body in JSON format includes fields such as page title, thumbnail images, full page URL, and an extract field.
+- The code for the function to retrieve Wikipedia articles and parse the response shares similarities with the previous implementation of the weather forecast function.
+- The updated get Wikipedia article function uses the request module's URL open function to access the URL for a random page summary.
+- The JSON module's load function is used for parsing the response, extracting specific information from the response.
+- The final test case is added to display the retrieved page title, URL, and extract.
