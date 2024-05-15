@@ -555,3 +555,93 @@ Importing Articles
 - The updated get Wikipedia article function uses the request module's URL open function to access the URL for a random page summary.
 - The JSON module's load function is used for parsing the response, extracting specific information from the response.
 - The final test case is added to display the retrieved page title, URL, and extract.
+---------------------------------------------------
+
+# Digest Email
+
+Writing and Formatting Email Messages
+- The Daily Digest email Python module implements the format message method to format various content into the email's body.
+- It is possible to include both plaintext and HTML formats in a single email message using Python's MIMEMultipart class. HTML is the more commonly used format for emails today.
+- The daily digest email class is implemented using an init constructor method that initializes an instance variable as a dictionary to store four types of content, each with a Boolean flag indicating if it should be included.
+- The latest content is retrieved using functions from the DD content module.
+- The format message method formats the Plaintext version of the message, setting the text variable as a formatted string with a header including the current date.
+- Stylistic elements like asterisks and tildes are added to make the Plaintext section header stand out.
+- The method checks if each content type should be included and adds the section headers and formatted text accordingly.
+- For generating HTML content, HTML strings are concatenated to the HTML variable using HTML tags and angle brackets to define the display format like a webpage.
+- IF statements determine whether each content type should be included.
+- An HTML footer is added towards the end of the format message function, and the text and HTML message are returned as a dictionary.
+- The test code generates a new message, prints the Plaintext and HTML content to the console, and saves them in text and HTML files for further inspection.
+
+Sending an Email
+- Python's 'email' library is used to manage email messages, with the 'email.message' module being the main tool for creating daily digest emails.
+- The module consists of a class called 'Email Message', which is used to combine components like subject line, recipient list, and message content. However, setting up and running an email server locally is not recommended.
+- Many online email services offer an SMTP server for external email clients and applications.
+- Google changed its security policy in May 2022, making it less secure, so Gmail is no longer recommended.
+- Instead, Outlook email addresses can be used. Microsoft's support page provides information on the server name, port, and encryption method for connecting to the Outlook SMTP server.
+- The send email function creates a new email message object with various fields, generates the message body using the format message method, configures the email to use plain text using the set content method, and includes the HTML version using the ad alternative method.
+- The send email method establishes a secure connection to the SMTP server using TLS encryption.
+- To test the code, a call to the send email method is added at the end of the script.
+- The email is sent to a recipient's inbox, displaying both plain text and HTML versions.
+- This makes the daily digest email compatible with a wider range of email clients and settings.
+
+Task Scheduling
+- The original outline for a daily digest email class was successfully implemented, with the format message and send email methods added.
+- However, the final task was to implement the ability to send the daily digest at a specific time every day.
+- To do this, a method called schedule time was added in the GUI, allowing the administrator to set the desired sending time for the email.
+- The library "schedule" was chosen for its easy-to-use interface for scheduling tasks to repeat at specific intervals or times of day.
+- However, the scheduler lacks the capability to operate in the background, meaning that if a task is scheduled to send an email in the future, the program will remain idle until that task is completed, preventing the administrator from interacting with the program.
+- A workaround for running the scheduler as a separate thread can be found in the documentation.
+- In the implementation, a new class called the scheduler was created, incorporating the scheduled time method from the GUI class and the send time field from the email class.
+- By inheriting from Python's threading module's thread class, the scheduler can run independently from the main thread.
+- When it is time to send another email digest, the scheduler calls the email class's send email method, while the GUI uses the scheduler's scheduled time method to determine the send time.
+- The implementation involves creating a new module and class for the daily digest scheduler, using the schedule API for scheduling tasks, and ensuring continuous execution of pending tasks until the stop flag is triggered. The run method ensures continuous execution of pending tasks until the stop flag is triggered.
+- To test the DD scheduler script, a test email was sent at 11:20, and a new daily digest was received at the specified time.
+- The new scheduler class works by scheduling a test email to be sent at the specified time, and the program remains active by sleeping the main thread for 60 seconds while the scheduler waits to send the email.
+--------------------------------------------
+
+# Building a Graphical User Interface (GUI)
+
+GUI Design Planning
+- The author has completed the implementation of four content generation functions, an email class for formatting and sending the daily digest, and a scheduler.
+- However, they also included a non-functional requirement to create a graphical user interface (GUI) for the admin's use.
+- To create a GUI, the author breaks down the project into smaller parts, dividing each task into separate boxes and arranging elements within them.
+- They later reorganized these boxes as subsections to create the overall GUI layout.
+- The purpose of the GUI is to provide users with options to customize their digest email, including content sources, managing recipients, scheduling sending time, and configuring sender credentials.
+- To start designing the GUI, the author breaks it down into smaller parts, focusing on tasks like adding and removing recipients.
+- Check buttons were used to turn on or off binary choices, and a section header was added to make it clear what check buttons were related to.
+- For managing recipients' lists, a list box was used, and a button called "Remove Selected" was added to remove selected recipients.
+- A simple single-line text entry field was used for adding recipients, and the "Add Recipient" button was rearranged to be at the top.
+- A section header was added for recipient configuration controls.
+- Spin boxes were used to decide when to send the digest, and text entry fields were used for setting up sender credentials.
+- To recognize configuration changes, the author suggests creating a GUI that automatically updates the program's variables whenever a change is made in the fields.
+- This would prevent unintended actions and ensure that the admin can lock in new configuration settings.
+
+Exploring Python Tkinter GUI
+- The "dd GUI" is a Python GUI module that consists of 250 lines and is designed to interact with daily digest email and scheduler modules.
+- The "route" parameter in the initialization method of the daily digest class corresponds to the TKinter window where the GUI is built.
+- The code adds a title, header label, and defines font styles to the window using the TKinter API.
+- The code follows a pattern to create different parts of the GUI, such as adding and removing recipients, scheduling delivery time, configuring email content, updating sender credentials, and controlling settings updates.
+- All variables are instantiated within the initialization method to simplify field initialization.
+- The code is organized into two sections: creating TKinter widgets, positioning them within the frame, and using TKinter's grid geometry manager for widget placement.
+- Four callback methods are associated with buttons in the GUI: "add recipients," "remove selected recipients," and "update settings."A bonus button was added to manually send an email digest.
+- The final method, "shutdown," stops the scheduler thread before closing the GUI window.
+- The "if name is main" section spawns the GUI as the top-level script.
+- The module provides all necessary controls for the project, including adding/removing recipients, scheduling send time, selecting content, and updating settings.
+-------------------------------
+
+# Design Iteration
+
+Iterative enhancements
+- Congratulations on completing the initial scope of the daily digest project! It's important to continue improving the application by implementing tasks such as saving configuration settings, allowing recipients to customize content, enhancing the weather forecast, adjusting email sending times based on timezones, notifying the admin of unavailable content sources, running the application as a scheduled service, ensuring secure storage of sensitive information, and improving the GUI.
+- To save configuration settings, modify the program to store them in a file or database, ensuring they are retained across program restarts.
+- Customize the weather forecast for each recipient's location, adjust the sending time of the email digest based on each recipient's timezone, notify the admin of unavailable content sources, and create a persistent application as a scheduled service.
+- Additionally, improve the security of the application by finding a more secure way to store sensitive information, such as sender credentials and API keys.
+- Enhance the visual appeal and usability of the GUI by refining the layout, adding icons, using color schemes, or incorporating user-friendly features.
+
+Preserving Configuration Settings
+- The digest project has introduced two new methods to save information between program runs: a save config method and a load config method.
+- The save config method gathers the current state of all GUI elements, saves it to a file using the JSON.dump function, and then calls the update settings method to apply the configuration.
+- To integrate these methods, a try-except block is added in the shutdown method to save the current configuration when closing the program.
+- A try clause is added in the classes and init method to load the configuration from the JSON file, and if loading fails, the application will use the default settings.
+- This feature improves the usability of the digest project and will take about half an hour to implement.
+--------------------------------------
